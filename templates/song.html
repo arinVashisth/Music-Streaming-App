@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jmusica</title>
+    <link rel="stylesheet" href="/static/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: antiquewhite;
+        }
+        nav{
+            height: 75px;
+            width: 100%;
+            font-family: 'Ubuntu', sans-serif;
+        }
+        nav ul{
+            display: flex;
+            list-style: none;
+            height: 75px;
+            background-color: black;
+        }
+        nav ul a,h4{
+            color: aliceblue;
+        
+        }
+        nav ul a{
+            margin-left: 1150px;
+        }
+        nav ul li{
+            display: flex;
+            padding: 0 12px;
+            align-items: center;
+        }
+         .brand img{
+            width: 105px;
+            height: 75px;
+         }
+         .brand {
+            display: flex;
+            align-items: center;
+            font-weight: bolder;
+        }
+        .songList img,audio{
+            margin-top: 0px;
+            padding: 0;
+            display: flex;
+        
+        }
+          
+          
+        .bottom nav{
+            position: fixed; /* change this from sticky to fixed */
+            height: 130px;
+            background-color: black;
+            bottom: 0;
+        
+          }
+          
+        .songList img{
+            height: 200px;
+            width: 275px;
+        }        
+        </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- ... -->
+        <div class="songList">
+            <h2>Song</h2>
+          <!-- set the display to flex and allow wrapping -->
+          <div class="flex-container" style="display: flex; flex-wrap: wrap; gap: 1px;">
+            <!-- each song is a flex item -->
+            <div class="flex-item" style="flex-basis: 33%;">
+              <h4 style="margin-top: 10px;">{{usong.s_name}}</h4>
+              <img src="/{{usong.cover_art}}" alt="" >
+              <audio src="/{{usong.s_path}}" controls></audio>
+            </div>
+          </div>
+        </div>
+        <!-- ... -->
+    </div>
+    <div class="bottom">
+        <nav>
+            <a href="/paddsong/{{usong.id}}" class="btn btn-primary" style="font-size:medium;margin-right: 20px;">Add to Playlist</a>
+            <!-- <a href="/addrating/{{usong.s_name}}/" class="btn btn-primary" style="font-size:medium;">Add Rating  </a> -->
+            {% if cname %}
+                <!-- {# Code to execute if the condition is true #} -->
+                <a href="/addrating/{{usong.s_name}}/{{cname.id}}" class="btn btn-primary" style="font-size:medium;">Add Rating  </a>
+            {% else %}
+                <!-- {# Code to execute if the condition is false #} -->
+                <a href="/addrating/{{usong.s_name}}/{{uname.id}}" class="btn btn-primary" style="font-size:medium;">Add Rating  </a>
+            {% endif %}
+            {% if cname %}
+                <!-- {# Code to execute if the condition is true #} -->
+                <button type="button" class="btn btn-outline-dark shadow-none me-2"><a href="/cdashboard/{{cname.id}}">GO BACk</a> </button>
+            {% else %}
+                <!-- {# Code to execute if the condition is false #} -->
+                <button type="button" class="btn btn-outline-dark shadow-none me-2"><a href="/dashboard/{{uname.id}}">GO BACk</a> </button>
+            {% endif %}
+
+            
+        </nav>
+    </div>
+
+</body>
+</html>
+
+<!--
+-->

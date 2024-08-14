@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LiveMusic</title>
+    <link rel="stylesheet" href="/static/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: antiquewhite;
+        }
+        nav{
+            height: 75px;
+            width: 100%;
+            font-family: 'Ubuntu', sans-serif;
+        }
+        nav ul{
+            display: flex;
+            list-style: none;
+            height: 75px;
+            background-color: black;
+        }
+        nav ul a,h4{
+            color: aliceblue;
+        
+        }
+        nav ul a{
+            margin-left: 1150px;
+        }
+        nav ul li{
+            display: flex;
+            padding: 0 12px;
+            align-items: center;
+        }
+         .brand img{
+            width: 105px;
+            height: 75px;
+         }
+         .brand {
+            display: flex;
+            align-items: center;
+            font-weight: bolder;
+        }
+        .songList img,audio{
+            margin-top: 0px;
+            padding: 0;
+            display: flex;
+        
+        }
+          
+          
+        .bottom nav{
+            position: fixed; /* change this from sticky to fixed */
+            height: 130px;
+            background-color: black;
+            bottom: 0;
+        
+          }
+          
+        .songList img{
+            height: 200px;
+            width: 275px;
+        }        
+        </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="brand"><img src="/static/pictures/applogo.jpeg" alt="LiveMusic"/></li>
+            <li><a href="/logout">Log-out</a></li>
+            <li><h4>{{user.username}}</h4></li>
+
+        </ul>
+    </nav>
+    <div class="container">
+        <!-- ... -->
+        <div class="songList">
+            <h2>Songs</h2>
+          <!-- set the display to flex and allow wrapping -->
+          <div class="flex-container" style="display: flex; flex-wrap: wrap; gap: 1px;">
+            {% for song in songs %}
+            <!-- each song is a flex item -->
+            <div class="flex-item" style="flex-basis: 33%;">
+              <h4 style="margin-top: 10px;">{{song.s_name}}</h4>
+              <img src="/{{song.cover_art}}" alt="" >
+              <audio src="/{{song.s_path}}" controls></audio>
+              <button><a href="/rate/{{song.id}}/{{user.id}}">Rate</a></button>
+              <p>Rating: {{song.ratings|avg}}</p>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <!-- ... -->
+    </div>
+    <div class="bottom">
+        <nav></nav>
+    </div>
+
+</body>
+</html>

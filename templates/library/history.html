@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Release - JmusicA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet"> <!-- This is for font copied from Google fonts website -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons">
+    <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css”/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="css/common.css" class="css">
+    <style>
+        #logo {
+            position: absolute;
+            top: 10px; /* Adjust the top distance as needed */
+            left: 10px; /* Adjust the left distance as needed */
+        }
+        .anyClass {
+          height:150px;
+          overflow-y: scroll;
+          overflow-x: scroll; /* Scrollbar ke liye */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <!-- <img class="navbar navbar-expand-lg navbar-light bg-white px-lg-3 py-lg-2 shadow-sm sticky-top" src="/static/Jmusic(1).png" alt="Logo Description"> -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white px-lg-3 py-lg-2 shadow-sm sticky-top"> <!-- This is  -->
+            <div class="container-fluid">
+                <a class="navbar-brand me-5 fw-bold fs-3 h-font" href="#">JmusicA</a><!-- Here the style of the seven seas All the margins are given here of seven seas -->
+                <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link me-2 active" style="margin-top: 10px" href="/new/{{cred.email_address}}/{{cred.password}}">MUSIC</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link me-2" style="margin-right: 10px;margin-top: 10px;border-bottom: 3px solid black" href="/history">History</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link me-3" style="margin-top: 10px;margin-right: 20px" href="/likedsongs/{{cred.id}}">Liked Songs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link me-2" style="margin-top: 10px" href="/albums/{{cred.id}}">Albums</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link me-2" style="margin-top: 10px" href="/artists/{{cred.id}}">Artists</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link me-2" style="margin-top: 10px" href="/playlists/{{cred.id}}">Playlists</a>
+                        </li>
+
+                    </ul>
+                    <div style="align-content: center;">
+                        <form class="d-flex" style="margin-right: 235px;margin-left: 50px;">
+                            <input class="form-control me-2" style="text-align:center;width: 400px; margin: 0 auto;" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success me-2" type="submit"><i class="bi bi-search"></i></button>
+                        </form>
+                    </div>
+
+                    <div class="d-flex" style="margin-left: -90px;">
+                        <button type="button" class="btn btn-outline-dark shadow-none me-2"><a href="/" class="btn btn-light btn-sm">LOG OUT</a></button>
+                        <button type="button" class="btn btn-outline-dark shadow-none me-2"><a href="/csignup">Register for Creator</a> </button>
+                      
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        
+    </div>
+    <div class="body">
+        <div class="container-fluid" style="position:absolute; margin-top:0px;">
+            <div class="row">
+                <div class="col-lg-10 ms-auto p-4 overflow-hidden">
+
+                    <h2 class="mb-4 mt-0">History</h2>
+
+                    <nav class="navbar navbar-expand-lg navbar-light bg-white px-lg-3 py-lg-2 mb-3 shadow-sm"> <!-- This is  -->
+                        <div class="container-fluid">
+                            <div class="collapse navbar-collapse">
+                                <div class="d-flex">
+                                    Recently Played
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <div class="row">
+                        <div class="card" style="width: 18rem;">
+                            <img src="..." class="card-img-top object-fit-fill border rounded" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+
+    </div>
+</body>
+</html>
+
+<!--
+
+            <div class="c-player__panel">
+            <section class="c-progress">
+                <div class="c-progress__start">0:00</div>
+                <div class="c-progress__end">4:21</div>
+                <div class="c-progress__current" style="transform: translate(539.5px, -50%);">1:42 / 4:21</div>
+                <div class="c-progress__track">
+                    <div class="c-progress__seek" style="width:0"></div>
+                    <div class="c-progress__knob"></div>
+                </div>
+            </section>
+            <figure class="c-player__current o-flag o-flag--small o-flag--mini o-flag--thumbnail@lg">
+                <div class="o-flag__img">
+                    <a screen_name="player_screen" event_item="[object Object]" title="Apna Bana Le" class="" href="/song/apna-bana-le/ATIfejZ9bWw">
+                        <img src="https://c.saavncdn.com/815/Bhediya-Hindi-2023-20230927155213-500x500.jpg" alt="Apna Bana Le">
+                    </a>
+                </div>
+                <figcaption class="o-flag__body u-align-center u-align-left@lg">
+                    <h4 class="u-deci u-ellipsis u-margin-bottom-none@sm">
+                        <a screen_name="player_screen" title="Apna Bana Le" class="u-color-js-gray" href="/song/apna-bana-le/ATIfejZ9bWw">Apna Bana Le</a>
+                    </h4>
+                    <p class="u-centi u-ellipsis u-color-js-gray u-margin-bottom-none@sm">
+                        <a screen_name="player_screen" title="Sachin-Jigar" class="" href="/artist/sachin-jigar-songs/JO1Nx088Pfo_">Sachin-Jigar</a>,
+                        <a screen_name="player_screen" title="Arijit Singh" class="" href="/artist/arijit-singh-songs/LlRWpHzy3Hk_">Arijit Singh</a>
+                    </p>
+                </figcaption>
+            </figure>
+            <ul class="c-player__actions">
+                <li class="c-player__btn u-visible-visually@lg">
+                    <span class="u-centi u-valign-text-bottom u-padding-horizontal-small@sm">0:00 4:21</span>
+                </li>
+                <li class="c-player__btn u-visible-visually@lg">
+                    <span id="player_ellipsis" class="o-icon-ellipsis o-icon--xlarge u-valign-bottom c-btn-overflow"></span>
+                </li>
+                <li class="c-player__btn u-visible-visually@lg">
+                    <span class="c-slider">
+                        <span id="player_volume" class="o-icon-volume o-icon--huge"></span>
+                        <div class="c-slider__content">
+                            <div class="c-slider__track">
+                                <div class="c-slider__level" style="height:43.05555555555556%">
+                                </div>
+                            </div>
+                        </div>
+                    </span>
+                </li>
+                <li class="c-player__btn c-player__btn-toggle u-visible-visually@lg">
+                    <span id="player_expand" class="o-icon-expand o-icon--xlarge"></span>
+                </li>
+            </ul>
+            <ul class="c-player__controls u-margin-bottom-none@sm">
+                <li class="c-player__btn c-player__btn--shift c-player__btn-action1">
+                    <span id="player_repeat" class="o-icon-repeat o-icon--xlarge"></span>
+                </li>
+                <li class="c-player__btn c-player__btn-prev">
+                    <span id="player_prev" class="o-icon-previous o-icon--xlarge"></span> 
+                </li>
+                <li class="c-player__btn">
+                    <span id="player_play_pause" class="o-icon-play o-icon--xlarge"></span>
+                </li>
+                <li class="c-player__btn c-player__btn-next">
+                    <span id="player_next" class="o-icon-next o-icon--xlarge"></span> 
+                </li>
+                <li class="c-player__btn c-player__btn--shift c-player__btn-action2">
+                    <span id="player_shuffle" class="o-icon-shuffle o-icon--xlarge"></span>
+                </li>
+            </ul>
+        </div>
+-->
